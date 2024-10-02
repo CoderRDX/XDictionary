@@ -33,7 +33,7 @@ const customDictionary = [
         <input 
         type="text"
         value={inputWord}
-        onChange={(e) => setinputWord(e.target.value.toLowerCase())}
+        onChange={(e) => setinputWord(e.target.value)}
         placeholder="Search for a word..."
          />
          <button onClick={handleSearch}>Search</button>
