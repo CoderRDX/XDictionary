@@ -37,7 +37,7 @@ const customDictionary = [
         placeholder="Search for a word..."
          />
          <button onClick={handleSearch}>Search</button>
-         <p><strong>Definition: </strong></p>
+         <p><strong>Definition:</strong></p>
           <p>{meaning}</p>
         
       </div>
