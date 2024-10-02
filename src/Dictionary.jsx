@@ -37,12 +37,8 @@ const customDictionary = [
         placeholder="Search for a word..."
          />
          <button onClick={handleSearch}>Search</button>
-         {meaning && (
-            <div>
-                <p><strong>Definition:</strong></p>
-                <p>{meaning}</p>
-            </div>
-        )}
+         <p><strong>Definition:</strong></p>
+         {meaning && (<p>{meaning}</p>)}
       </div>
     );
 
