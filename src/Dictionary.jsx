@@ -12,19 +12,21 @@ const customDictionary = [
 
   export default function Dictionary(){
 
-    const [inputWord, setinputWord] = useState('');
+    const [searchTerm, setSearchTerm] = useState('');
     const [meaning, setMeaning] = useState('');
 
 
     const handleSearch = () => {
 
-        if (!inputWord) {
+        if (!searchTerm) {
             setMeaning('Word not found in the dictionary.'); 
             return;
           }
+
         const result = customDictionary.find(entry => 
-            entry.word.toLowerCase() === inputWord.toLowerCase()
+            entry.word.toLowerCase() === searchTerm.toLowerCase()
           );
+          
           if (result) {
             setMeaning(result.meaning);
           } else {
@@ -39,8 +41,8 @@ const customDictionary = [
         <div>
         <input 
         type="text"
-        value={inputWord}
-        onChange={(e) => setinputWord(e.target.value)}
+        value={searchTerm}
+        onChange={(e) => setSearchTerm(e.target.value)}
         placeholder="Search for a word..."
          />
          <button onClick={handleSearch}>Search</button>
