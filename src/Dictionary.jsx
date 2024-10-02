@@ -17,6 +17,11 @@ const customDictionary = [
 
 
     const handleSearch = () => {
+
+        if (!inputWord) {
+            setMeaning('Word not found in the dictionary.'); 
+            return;
+          }
         const result = customDictionary.find(entry => 
             entry.word.toLowerCase() === inputWord.toLowerCase()
           );
@@ -30,6 +35,8 @@ const customDictionary = [
     return(
         <div>
         <h1>Dictionary App</h1>
+
+        <div>
         <input 
         type="text"
         value={inputWord}
@@ -37,8 +44,10 @@ const customDictionary = [
         placeholder="Search for a word..."
          />
          <button onClick={handleSearch}>Search</button>
+        </div>
+      
          <p><strong>Definition:</strong></p>
-         {meaning && (<p>{meaning}</p>)}
+         <p>{meaning}</p>
       </div>
     );
 
