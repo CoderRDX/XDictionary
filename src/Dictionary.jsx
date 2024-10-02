@@ -23,7 +23,7 @@ const customDictionary = [
           if (result) {
             setMeaning(result.meaning);
           } else {
-            setMeaning('Word not found in the dictionary');
+            setMeaning('Word not found in the dictionary.');
           }
     };
 
