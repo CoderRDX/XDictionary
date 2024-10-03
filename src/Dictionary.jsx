@@ -60,13 +60,10 @@ const customDictionary = [
             <button onClick={handleSearch}>Search</button>
             <p>
             <strong>Definition:</strong> 
+            <p>{meaning}</p>
             </p>
           </div>
         
-          <div>
-            <p>{meaning}</p>
-          </div>
-
         </div>
     );
 
