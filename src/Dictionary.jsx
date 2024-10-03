@@ -17,9 +17,10 @@ const customDictionary = [
 
 
     const handleSearch = () => {
-
+      console.log("Search Term:", searchTerm);
         if (!searchTerm) {
             setMeaning('Word not found in the dictionary.'); 
+            console.log("Meaning:", 'Word not found in the dictionary.');
             return;
           }
 
@@ -29,8 +30,10 @@ const customDictionary = [
           
           if (result) {
             setMeaning(result.meaning);
+            console.log("Meaning:", result.meaning);
           } else {
             setMeaning('Word not found in the dictionary.');
+            console.log("Meaning:", 'Word not found in the dictionary.');
           }
     };
 
@@ -49,8 +52,8 @@ const customDictionary = [
           </div>
           <p>
             <strong>Definition:</strong> 
+            {meaning}
           </p>
-          <p>{meaning}</p>
         </div>
     );
 
