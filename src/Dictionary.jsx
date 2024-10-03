@@ -17,24 +17,33 @@ const customDictionary = [
 
 
     const handleSearch = () => {
-      console.log("Search Term:", searchTerm);
-        if (!searchTerm) {
-            setMeaning('Word not found in the dictionary.'); 
-            console.log("Meaning:", 'Word not found in the dictionary.');
-            return;
-          }
 
-        const result = customDictionary.find(entry => 
-            entry.word.toLowerCase() === searchTerm.toLowerCase()
-          );
-          
-          if (result) {
-            setMeaning(result.meaning);
-            console.log("Meaning:", result.meaning);
-          } else {
-            setMeaning('Word not found in the dictionary.');
-            console.log("Meaning:", 'Word not found in the dictionary.');
+      setMeaning('');
+
+        if (!searchTerm) {
+          setMeaning('Word not found in the dictionary.'); 
+          return;
+        }
+
+        const lowerCaseSearchTerm = searchTerm.toLowerCase();
+        let foundMeaning = '';
+    
+        for (let i = 0; i < customDictionary.length; i++) {
+          if (customDictionary[i].word.toLowerCase() === lowerCaseSearchTerm) {
+            foundMeaning = customDictionary[i].meaning;
+            break; 
           }
+        }
+
+        if (foundMeaning) {
+          setMeaning(foundMeaning);
+          console.log("Meaning:", foundMeaning);
+        } else {
+          setMeaning('Word not found in the dictionary.');
+          console.log("Meaning:", 'Word not found in the dictionary.');
+        }
+
+        setSearchTerm('');
     };
 
     return(
@@ -55,7 +64,7 @@ const customDictionary = [
           </div>
         
           <div>
-            <p> {meaning}</p>
+            <p>{meaning}</p>
           </div>
 
         </div>
