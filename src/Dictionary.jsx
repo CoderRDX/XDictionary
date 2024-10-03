@@ -36,21 +36,23 @@ const customDictionary = [
 
     return(
         <div>
-        <h1>Dictionary App</h1>
 
-        <div>
-        <input 
-        type="text"
-        value={searchTerm}
-        onChange={(e) => setSearchTerm(e.target.value)}
-        placeholder="Search for a word..."
-         />
-         <button onClick={handleSearch}>Search</button>
-        </div>
+          <h1>Dictionary App</h1>
+          <div>
+            <input 
+            type="text"
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+            placeholder="Search for a word..."
+            />
+            <button onClick={handleSearch}>Search</button>
+          </div>
       
-         <p><strong>Definition:</strong></p>
-         <p>{meaning}</p>
-      </div>
+          <p>
+            <strong>Definition:</strong>
+          </p>
+          <p>{meaning}</p>
+        </div>
     );
 
   }
